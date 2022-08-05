@@ -18,7 +18,7 @@ export class NovoUsuarioComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private novoUsuarioService: NovoUsuarioService,
-    private UsuarioExisteService: UsuarioExisteService,
+    private usuarioExisteService: UsuarioExisteService,
     private router: Router
   ) {}
 
@@ -30,7 +30,7 @@ export class NovoUsuarioComponent implements OnInit {
         userName: [
           '',
           [minusculoValidator],
-          [this.UsuarioExisteService.usuarioJaExiste],
+          [this.usuarioExisteService.usuarioJaExiste],
         ],
         password: [''],
       },

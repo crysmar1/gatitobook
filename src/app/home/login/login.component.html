@@ -3,16 +3,44 @@
 
 <form class="form mt-4" (ngSubmit)="login()" #loginForm="ngForm">
   <div class="form-group">
-    <input class="form-control" placeholder="Nome do Usuário" type="text" [(ngModel)]="usuario" name="usuario" #campoUsuario="ngModel" required/>
+    <input
+      class="form-control"
+      placeholder="Nome do Usuário"
+      type="text"
+      [(ngModel)]="usuario"
+      name="usuario"
+      #campoUsuario="ngModel"
+      required
+    />
   </div>
-  <app-mensagem *ngIf="campoUsuario.invalid && campoUsuario.touched" mensagem="Usuário obrigatório"></app-mensagem>
+  <app-mensagem
+    *ngIf="campoUsuario.invalid && campoUsuario.touched"
+    mensagem="Usuário obrigatório"
+  ></app-mensagem>
 
   <div class="form-group">
-    <input class="form-control" type="password" placeholder="Senha" [(ngModel)]="senha" name="senha" #campoSenha="ngModel" required/>
-    <app-mensagem *ngIf="campoSenha.invalid && campoSenha.touched" mensagem="Senha obrigatória" ></app-mensagem>
+    <input
+      class="form-control"
+      type="password"
+      placeholder="Senha"
+      [(ngModel)]="senha"
+      name="senha"
+      #campoSenha="ngModel"
+      required
+    />
+    <app-mensagem
+      *ngIf="campoSenha.invalid && campoSenha.touched"
+      mensagem="Senha obrigatória"
+    ></app-mensagem>
   </div>
 
-  <button class="btn btn-primary btn-block" type="submit" [disabled]="loginForm.invalid">Login</button>
+  <button
+    class="btn btn-primary btn-block"
+    type="submit"
+    [disabled]="loginForm.invalid"
+  >
+    Login
+  </button>
 </form>
 
 <p>Não é um usuário? <a [routerLink]="['novousuario']">Se cadastre!</a></p>
